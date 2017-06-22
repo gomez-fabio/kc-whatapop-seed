@@ -5,7 +5,7 @@
   <div *ngIf="products?.length > 0" class="small-up-2 medium-up-4 large-up-6">
 
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-    | Green Path                                                       |
+    | Green Path      ************* DONETE *************               |
     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
     | Suscribe el componente ProductComponent al evento que hayas      |
     | definido en él para notificar los clics sobre los productos.     |
@@ -14,6 +14,7 @@
     <app-product
       *ngFor="let product of products"
       [data]="product"
+      (clickOnProduct)="showProduct($event)"
       class="column">
     </app-product>
   </div>

@@ -2,7 +2,7 @@
   <img [src]="data.photo" class="thumbnail" />
 
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-  | Green Path                                                       |
+  | Green Path      ************* DONETE *************               |
   |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
   | Un clic en el botón de compra debería enviar un evento al        |
   | componente padre.                                                |
@@ -19,7 +19,8 @@
   <button
     class="button expanded"
     [class.success]="data.state === 'selling'"
-    [class.secondary]="data.state === 'sold'">
+    [class.secondary]="data.state === 'sold'"
+    (click)="productClick(data)">
       <span *ngIf="data.state === 'selling'">
         Comprar por {{ data.price }} €
       </span>

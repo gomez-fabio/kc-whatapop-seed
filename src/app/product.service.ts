@@ -17,7 +17,7 @@ export class ProductService {
   getProducts(filter: ProductFilter = undefined): Observable<Product[]> {
 
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-    | Pink Path                                                        |
+    | Pink Path      ************* DONETE *************                |
     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
     | Pide al servidor que te retorne los productos ordenados de más   |
     | reciente a menos, teniendo en cuenta su fecha de publicación.    |
@@ -59,18 +59,38 @@ export class ProductService {
     |       state=x (siendo x el estado)                               |
     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+    // if (filter) {//cuando pulsamos buscar, antes filter es null
+    //   console.log(filter.category);
+    //   console.log(filter.text);
+    //   if (filter.category !==undefined && filter.text !== undefined){
+    //     console.log ("ambos rellenos");
+    //   }
+    // }
+    
+      
+     // let categoriaFiltro = filter.category;
+     // let textoFiltro     = filter.text;
+
+      //if categoriaFiltro !== 0
+
+
+
+
+
     return this._http
-      .get(`${this._backendUri}/products`)
+      .get(`${this._backendUri}/products?_sort=publishedDate&_order=DESC`)
       .map((data: Response): Product[] => Product.fromJsonToList(data.json()));
   }
 
   getProduct(productId: number): Observable<Product> {
+    console.log("get product");
     return this._http
       .get(`${this._backendUri}/products/${productId}`)
       .map((data: Response): Product => Product.fromJson(data.json()));
   }
 
   buyProduct(productId: number): Observable<Product> {
+    console.log("buy product");
     const body: any = { 'state': 'sold' };
     return this._http
       .patch(`${this._backendUri}/products/${productId}`, body)
@@ -78,6 +98,7 @@ export class ProductService {
   }
 
   setProductAvailable(productId: number): Observable<Product> {
+    console.log("set product available");
     const body: any = { 'state': 'selling' };
     return this._http
       .patch(`${this._backendUri}/products/${productId}`, body)
