@@ -30,7 +30,7 @@ export class ProductService {
     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-    | Red Path                                                         |
+    | Red Path      ************* DONETE *************                 |
     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
     | Pide al servidor que te retorne los productos filtrados por      |
     | texto y/ por categoría.                                          |
@@ -58,39 +58,34 @@ export class ProductService {
     |   - Búsqueda por estado:                                         |
     |       state=x (siendo x el estado)                               |
     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-    // if (filter) {//cuando pulsamos buscar, antes filter es null
-    //   console.log(filter.category);
-    //   console.log(filter.text);
-    //   if (filter.category !==undefined && filter.text !== undefined){
-    //     console.log ("ambos rellenos");
-    //   }
-    // }
     
-      
-     // let categoriaFiltro = filter.category;
-     // let textoFiltro     = filter.text;
+    let fistro: string ='';
 
-      //if categoriaFiltro !== 0
-
-
-
-
+    if (filter)  {
+      if (filter.text){
+        fistro = `&q=${filter.text}`;
+        // console.clear;
+        // console.log(fistro);
+      }
+      if (filter.category && filter.category !== '0'){
+        fistro += `&category.id=${filter.category}`;
+        // console.clear;
+        // console.log(fistro);
+      }
+    }
 
     return this._http
-      .get(`${this._backendUri}/products?_sort=publishedDate&_order=DESC`)
+      .get(`${this._backendUri}/products?_sort=publishedDate&_order=DESC${fistro}`)
       .map((data: Response): Product[] => Product.fromJsonToList(data.json()));
   }
 
   getProduct(productId: number): Observable<Product> {
-    console.log("get product");
     return this._http
       .get(`${this._backendUri}/products/${productId}`)
       .map((data: Response): Product => Product.fromJson(data.json()));
   }
 
   buyProduct(productId: number): Observable<Product> {
-    console.log("buy product");
     const body: any = { 'state': 'sold' };
     return this._http
       .patch(`${this._backendUri}/products/${productId}`, body)
@@ -98,7 +93,6 @@ export class ProductService {
   }
 
   setProductAvailable(productId: number): Observable<Product> {
-    console.log("set product available");
     const body: any = { 'state': 'selling' };
     return this._http
       .patch(`${this._backendUri}/products/${productId}`, body)
