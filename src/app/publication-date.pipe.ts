@@ -4,7 +4,7 @@ import * as moment from 'moment';
 import 'moment/locale/es';
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-| Blue Path                                                        |
+| Blue Path      ************* DONETE *************                |
 |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
 | Crea el pipe PublicationDatePipe. Su cometido es, partiendo de   |
 | una fecha dada, retornar una cadena de texto que exprese el      |
@@ -20,7 +20,8 @@ import 'moment/locale/es';
 })
 
 export class PublicationDatePipe implements PipeTransform {
-    transform(value: any, args?: any): any {
-      return null;
+    
+    transform(value: number): string {
+      return `${moment(value).fromNow()} ${moment(value).format('L')}`; //Le he añadido el dd/mm/yyyy porque me mola más así. ;-)
     }
 }
