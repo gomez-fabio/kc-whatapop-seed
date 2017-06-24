@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 
 import { ConfirmDialogModule, ConfirmationService } from 'primeng/primeng';
 
+import { PublicationDatePipe } from "app/publication-date.pipe";
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BackendUriProvider } from './app-settings';
@@ -22,7 +23,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserService } from './user.service';
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-| Blue Path                                                        |
+| Blue Path      ************* DONETE *************                |
 |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
 | No olvides declarar PublicationDatePipe en el módulo.            |
 |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -35,7 +36,8 @@ import { UserService } from './user.service';
     ProductResetComponent,
     ProductComponent,
     ProductsCollectionComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    PublicationDatePipe
   ],
   imports: [
     BrowserModule,
