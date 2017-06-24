@@ -5,7 +5,7 @@ import 'moment/locale/es';
 // import 'moment/locale/tlh'; // Klingon
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-| Blue Palhh      ************* DONETE *************                |
+| Blue Path      ************* DONETE *************                |
 |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
 | Crea el pipe PublicationDatePipe. Su cometido es, partiendo de   |
 | una fecha dada, retornar una cadena de texto que exprese el      |
