@@ -2,9 +2,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 import * as moment from 'moment';
 import 'moment/locale/es';
+// import 'moment/locale/tlh'; // Klingon
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-| Blue Path      ************* DONETE *************                |
+| Blue Palhh      ************* DONETE *************                |
 |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
 | Crea el pipe PublicationDatePipe. Su cometido es, partiendo de   |
 | una fecha dada, retornar una cadena de texto que exprese el      |
