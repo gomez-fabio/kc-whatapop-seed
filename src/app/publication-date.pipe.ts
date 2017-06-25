@@ -23,6 +23,6 @@ import 'moment/locale/es';
 export class PublicationDatePipe implements PipeTransform {
     
     transform(value: number): string {
-      return `${moment(value).fromNow()} ${moment(value).format('L')}`; //Le he añadido el dd/mm/yyyy porque me mola más así. ;-)
+      return `${moment(value).fromNow()} - (${moment(value).format('L')})`; //Le he añadido el dd/mm/yyyy porque me mola más así. ;-)
     }
 }

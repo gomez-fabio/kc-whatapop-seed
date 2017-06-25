@@ -46,7 +46,7 @@ export class ProductService {
     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
     /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
-    | Yellow Path                                                      |
+    | Yellow Path      ************* DONETE *************              |
     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
     | Pide al servidor que te retorne los productos filtrados por      |
     | estado.                                                          |
@@ -67,10 +67,15 @@ export class ProductService {
         // console.clear;
         // console.log(fistro);
       }
-      if (filter.category && filter.category !== '0'){
+
+      if (filter.category && filter.category !== '0') {
         fistro += `&category.id=${filter.category}`;
         // console.clear;
         // console.log(fistro);
+      }
+
+      if(filter.state) {
+        fistro += `&state=${filter.state}`;
       }
     }
 
