@@ -6,6 +6,7 @@ import { ConfirmationService } from 'primeng/primeng';
 
 import { Product } from '../product';
 import { ProductService } from '../product.service';
+import { FavsService } from '../favs.service'; // Broken white path
 
 @Component({
   selector: 'app-product-details',
@@ -21,7 +22,9 @@ export class ProductDetailsComponent implements OnDestroy, OnInit {
     private _productService: ProductService,
     private _route: ActivatedRoute,
     private _router: Router,
-    private _confirmationService: ConfirmationService) { }
+    private _confirmationService: ConfirmationService,
+    private _FavsService: FavsService) { }
+    
 
   ngOnInit(): void {
     this._route.data.forEach((data: { product: Product }) => this.product = data.product);
@@ -57,6 +60,21 @@ export class ProductDetailsComponent implements OnDestroy, OnInit {
 
   goBack(): void {
     window.history.back();
+  }
+
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+    | Broken White Path      ************* DONETE *************        |
+    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+    |  Dos funciones que uso en el template, que llaman a los métodos  |
+    |  del servicio a su vez.                                          |
+    |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+  clickFavButton (productId: number): void {
+    this._FavsService.FavDesFav(productId);
+  }
+  
+  isFav (productId: number) {
+   return this._FavsService.isFav(productId);
   }
 
 }

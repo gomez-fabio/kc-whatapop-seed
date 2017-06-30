@@ -22,7 +22,7 @@
         "../node_modules/foundation-sites/dist/css/foundation.css",
         "../node_modules/primeng/resources/themes/omega/theme.css",
         "../node_modules/primeng/resources/primeng.min.css",
-        "../node_modules/font-awesome/css/font-awesome.min.css",
+        "../node_modules/font-awesome-4.7.0/css/font-awesome.min.css",
         "styles.css"
       ],
       "scripts": [],

@@ -1,9 +1,23 @@
 <div class="row" *ngIf="product">
   <div class="medium-4 columns">
-    <img [src]="product.photo" class="thumbnail" />
+    <img [src]="product.photo" class="thumbnail"/> 
   </div>
+
+  <!--Broken white path-->
+  <div *ngIf="isFav(product.id) === false">
+    <button class="fa fa-heart-o"
+            (click)="clickFavButton(product.id)" title="Añadir a favoritos">
+    </button>
+  </div>
+  <div *ngIf="isFav(product.id) === true" title="Eliminar de favoritos">
+    <button class="fa fa-heart"
+            (click)="clickFavButton(product.id)">
+    </button>
+  </div>
+  <!--<i class="fa" [ngClass]="{'fa-heart': isFav(), 'fa-heart-o': !isFav()}"/>-->
+
   <div class="medium-8 columns">
-    <h3>{{ product.name }}</h3>
+    <h3>{{ product.name }}</h3> 
     <p>
       <span class="label" [ngClass]="{
         'info': product.category.id === 1,

@@ -21,6 +21,7 @@ import { ProductsCollectionComponent } from './products-collection/products-coll
 import { SoldProductsResolveService } from './sold-products-resolve.service';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserService } from './user.service';
+import { FavsService } from './favs.service'; // Broken white path
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
 | Blue Path      ************* DONETE *************                |
@@ -54,7 +55,8 @@ import { UserService } from './user.service';
     ProductDetailsResolveService,
     ProductService,
     SoldProductsResolveService,
-    UserService
+    UserService,
+    FavsService
   ],
   bootstrap: [AppComponent]
 })

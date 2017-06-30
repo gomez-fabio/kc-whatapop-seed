@@ -11,7 +11,7 @@
     | definido en él para notificar los clics sobre los productos.     |
     |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-    <app-product
+    <app-product 
       *ngFor="let product of products"
       [data]="product"
       (clickOnProduct)="showProduct($event)"

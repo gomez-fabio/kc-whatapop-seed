@@ -4,3 +4,10 @@
   padding-top: 28px;
   margin-bottom: 20px;
 }
+
+ .fa {
+   color: red;
+   cursor: pointer;
+   font-size: 2em;
+   padding-left: 15px;
+ }
