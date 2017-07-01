@@ -1,3 +1,22 @@
 img:hover {
   cursor:  pointer;
 }
+
+ .fa {
+   color: red;
+   cursor: pointer;
+   font-size: 1.3em;
+ }
+
+#divFav {
+  position: relative;
+  top: 15px;
+  bottom: auto;
+}
+
+ #buttonFav {
+    display:      block;
+    margin-left:  auto;
+    margin-right: 0px;
+ }
+

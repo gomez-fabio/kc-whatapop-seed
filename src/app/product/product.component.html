@@ -1,6 +1,17 @@
 <div *ngIf="data">
-  <img [src]="data.photo" class="thumbnail"/> 
-
+  <div *ngIf="isFav(data.id) === false" id="divFav">
+    <button class="fa fa-heart-o" 
+            id="buttonFav"
+            (click)="clickFavButton(data.id)" title="Añadir a favoritos">
+    </button>
+  </div>
+  <div *ngIf="isFav(data.id) === true"  id="divFav">
+    <button class="fa fa-heart" 
+            id="buttonFav"
+            (click)="clickFavButton(data.id)" title="Eliminar de favoritos">
+    </button>
+  </div> 
+  <img [src]="data.photo" class="thumbnail"/>
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
   | Green Path      ************* DONETE *************               |
   |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|

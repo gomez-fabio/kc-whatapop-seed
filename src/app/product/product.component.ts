@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Product } from '../product';
+import { FavsService } from '../favs.service'; // Broken white path
 
 @Component({
   selector: 'app-product',
@@ -8,6 +9,9 @@ import { Product } from '../product';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
+
+ constructor(
+    private _FavsService: FavsService) { }
 
   @Input() data: Product;
 
@@ -29,7 +33,16 @@ export class ProductComponent {
       //console.log(product)
       this.clickOnProduct.emit(product);
     }
-  }		  
+
+  isFav (productId: number) {
+   return this._FavsService.isFav(productId);
+  }
+
+  clickFavButton (productId: number): void {
+    this._FavsService.FavDesFav(productId);
+  }  
+
+}		  
 
 
 
