@@ -11,7 +11,7 @@
             (click)="clickFavButton(data.id)" title="Eliminar de favoritos">
     </button>
   </div> 
-  <img [src]="data.photo" class="thumbnail"/>
+  <img [src]="data.photo" class="thumbnail" (click)="productClick(data)"/>
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
   | Green Path      ************* DONETE *************               |
   |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
